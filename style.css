@@ -60,6 +60,7 @@ body {
 
 
 header {
+    width: 800px;
     display: flex;
     flex-direction: row;
     -webkit-box-pack: justify;
@@ -79,19 +80,20 @@ header {
 
 .links {
     align-items: left;
-       
+    width: 50%; 
 }
 
 .redes {
     text-align: left;
     /* margin: 0 100px; verificar depois */
-    margin: 0 100px;
-    
+    margin: 0; 
+    width: 
 }
+
 
 .redes img {
     width: 30px;
-    margin: ;
+    
 }
 
 header div a {
@@ -105,27 +107,44 @@ header div a:hover {
     transition: 200ms;
 }
 
-
-
-
-
-
-
 .nome {
     margin-top: 20px;
     text-align: center;
-    
-
 }
-
-
-
 
 .redes {
     text-align: center;
     padding: 20;
-
     
 }
 
+/* cards */
+
+.tecnologias {
+    max-width: 800px;
+    margin: 0 auto;
+   
+}
+
+.tecnologia {
+    width: 100%;
+    padding: 24px;
+}
+
+.logos img {
+    padding: 24px;
+    width: 50px;
+}
+
+.logos {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 10 10 10 10;
+}
+
+.logos p {
+    margin: 20px;
+    text-align: justify;
+}
 
