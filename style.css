@@ -48,13 +48,8 @@ header {
     transition: color 200ms;
 }
 
-.menu .redes {
-    /* margin-left: 50%; */
-}
-
 .menu .redes img {
     width: 30px;
-    /* align-items: center; */
 }
 
  .menu .redes a {
@@ -62,7 +57,6 @@ header {
     margin: 0 0 0 20px;
     width: 20px;
 } 
-
 
 .caixa {
     height: 400px;
@@ -75,8 +69,7 @@ header {
     display: -webkit-flex;
     display: flex;
     align-items:center;
-    justify-content:center;
-          
+    justify-content:center;          
 }
 
 .caixa img {
@@ -88,16 +81,14 @@ header {
 .caixa .logo {
     width: 400px;
     margin-top: 20px;
-    text-align: center;
-    /* margin-right: 200px; */
+    text-align: center;    
 }
 
 .caixa .logo h1 {
     color: rgb(75, 75, 75);
     font-size: 50px;
     font-weight: bold;
-    margin: 15 0 20
-            
+    margin: 15 0 20;            
 }
 
 .caixa .texto {
@@ -106,7 +97,6 @@ header {
     width: 400px;
     text-align: left;
     line-height: 1.5;
-
 }
 
 .caixa .texto h2 {
@@ -114,59 +104,184 @@ header {
 }
 
 .caixa .texto p {
-    color: rgb(154, 142, 191)
+    color: rgb(154, 142, 191);
 }
 
-/* cards */
+/* tecnologias */
 
  .tecnologias {
-    height: 400px;
-    padding: 20px;
-    background-color: rgb(113, 89, 193);
     width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    display: relative;
+    max-width: 1426px;
+    margin: 0 auto;   
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(400px, auto);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    margin-top: 50px;
+    text-align: center;
     
-   
 }
 
 .tecnologia {
-    height: 400px;
+    line-height: 28px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    background-color: rgb(113, 89, 193);
+    filter: brightness(90%);    
+}
+
+.tecnologia:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.02);
+    border: 1.5px solid rgb(4, 211, 97);
+}
+
+.tecnologia-image-container img {
+    width: 70px;
+    padding: 0px;
+    margin-top: 84px;
+}
+
+.tecnologia-content {
+    padding: 24px;
+    /* text-align: justify; */
+}
+
+
+
+/* === CONTEÚDOS === */
+
+.bootcamp {
+    background: rgb(11, 10, 13);
+}
+
+.cards {
     width: 100%;
-    padding: 24px;
-    margin-left: 180px;
-    margin-right: 180px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    justify-content:center;
-    display: absolute;
-}
-
-.logos {
-    width: 50%;
+    max-width: 1426px;
+    margin: 0 auto;   
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 10 10 10 10;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: minmax(650px, auto);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    margin-top: 50px;
+
+}
+
+
+.card {
+    background-color: rgb(11, 10, 13);
+    filter: contrast(90%);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
     text-align: center;
+    
 }
 
-.logos img {
+.card p {
+    line-height: 28px;
+}
+
+.card:hover{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.02);
+    border: 2px solid;
+}
+#starter:hover{
+    border-color: rgb(113, 89, 193);
+}
+
+#launchbase:hover{
+    border-color: rgb(253, 149, 31);
+}
+
+#gostack:hover{
+    border-color: rgb(4, 211, 97);
+}
+
+
+
+.cards-image-container {
+    padding: 50px;
+    margin-top: 84px;
+
+}
+
+
+.card-content,
+.card-info {
     padding: 24px;
-    width: 60px;
+    
 }
 
-.logos p {
-    margin: 20px;
-    text-align: justify;
-}  
+#starter-p {
+    color: rgb(113, 89, 193);
+}
 
+#launchbase-p {
+    color: rgb(253, 149, 31);
+}
+
+#gostack-p {
+    color: rgb(4, 211, 97);
+}
+    
+/* === MODAL === */
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal .close-modal {
+    color: black;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal .maximize-modal {
+    color: black;
+    position: absolute;
+    right: 40px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* === MODAL.ACTIVE === */
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.maximize {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    
+}
+
+iframe {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+
+}
