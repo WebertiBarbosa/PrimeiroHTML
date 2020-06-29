@@ -50,6 +50,12 @@ header {
 
 .menu .redes img {
     width: 30px;
+    transition: all .5s;
+}
+
+.menu .redes img:hover {
+    border: 2px solid #136497; 
+    border-radius: 50%;  
 }
 
  .menu .redes a {
