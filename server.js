@@ -1,5 +1,6 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
+const courses = require('./data')
 
 const server = express()
 
@@ -8,7 +9,8 @@ server.use(express.static('public'))
 server.set ('view engine', 'njk')
 
 nunjucks.configure('views', {
-    express:server
+    express:server,
+    autoescape: false
 })
 
 
@@ -19,8 +21,25 @@ server.get ('/about', function(req, res){
     return res.render('about')
 })
 
-server.get ('/courses', function(req, res){
-    return res.render('courses')
+server.get ('/content', function(req, res){
+    return res.render('content', { items: courses} )
+})
+
+server.get ('/courses/:id', function(req, res) {
+    const id = req.params.id
+
+    const course = courses.find(function(course) {
+    
+    return course.id == id
+
+    })
+
+    if (!course) {
+        return res.send ('Course not-found!')
+    }
+    return res.render ('courses', {item: course})
+
+    
 })
 
 

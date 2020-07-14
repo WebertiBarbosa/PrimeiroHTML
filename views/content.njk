@@ -29,7 +29,7 @@
 
 
     <section class="cards">
-        
+        {% for item in items %}
         <div class="card" id="{{item.id}}">
             <div class="cards-image-container">
                 <img src="{{item.id}}.svg" alt="Imagem de {{item.id}}">
@@ -46,12 +46,13 @@
             </div>
             
         </div>
-        
+        {% endfor %}
 
     </section>
+
     
-    <script src="scripts.js"></script>  
-    
+    <script src="scripts.js"></script>
+
 {% endblock %}
 
 
